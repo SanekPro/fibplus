@@ -537,7 +537,7 @@ var
               until NODEClass(PInteger(@pArg1[0])^) <> NodeListElem;
 
               if I<2 then
-                Result := VarAsType(Result[0], varString);
+                Result:=VarAsType(Result[0], {$IFDEF D2009+}varUString{$ELSE}varString{$IFEND});
             end;
         else
             DatabaseError(SExprIncorrect);
